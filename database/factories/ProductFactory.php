@@ -27,7 +27,7 @@
               'description' => fake()->text(),
               'price' => fake()->randomFloat(2, 0, 999999.99),
               'stock' => fake()->numberBetween(-10000, 10000),
-              'main_image' => fake()->imageUrl(640, 480), // Especifica ancho y alto
+                //  'main_image' => fake()->imageUrl(640, 480), // Especifica ancho y alto
               'user_id' => User::factory(),
               'category_id' => Category::factory(),
             ];

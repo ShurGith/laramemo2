@@ -3,7 +3,7 @@
 <div class="bg-gray-900">
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
-      <a href="#" class="-m-1.5 p-1.5">
+      <a href="/" class="-m-1.5 p-1.5">
         <span class="sr-only">Your Company</span>
         <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
              alt="">
@@ -19,14 +19,18 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="#" class="text-sm/6 font-semibold text-white">Product</a>
-      <a href="#" class="text-sm/6 font-semibold text-white">Features</a>
-      <a href="#" class="text-sm/6 font-semibold text-white">Marketplace</a>
-      <a href="#" class="text-sm/6 font-semibold text-white">Company</a>
+      <a href="{{ route('pages.market') }}"
+         class="{{ request()->is('market') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Marketplace</a>
+      <a href="{{ route('pages.features') }}"
+         class="{{ request()->is('features') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Features</a>
+      <a href="{{ route('pages.about') }}"
+         class="{{ request()->is('about') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">About</a>
+      <a href="{{ route('pages.team') }}"
+         class="{{ request()->is('team') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Team</a>
       <a href="{{ route('products.index') }}"
-         class="{{ request()->is('products') ? 'text-emerald-400 font-semibold' : 'text-white' }} text-sm/6 ">Productos</a>
+         class="{{ request()->is('products') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Productos</a>
       <a href="{{ route('users.index') }}"
-         class="{{ request()->is('users') ? 'text-emerald-400 font-semibold' : 'text-white' }} text-sm/6 ">Usuarios</a>
+         class="{{ request()->is('users') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Usuarios</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
       <a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>

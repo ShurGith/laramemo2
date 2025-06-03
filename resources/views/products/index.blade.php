@@ -8,7 +8,7 @@
           @if($product->main_image)
             <img src="{{ $product->main_image }}" alt="{{ $product->name }}" class="w-full h-48 object-cover">
           @else
-            <img src="{{'https://placehold.co/600x400/orange/white?text=' . $product->name }}"
+            <img src="{{'https://placehold.co/600x400/'.dechex(mt_rand(0, 16777215)).'/white?text=' . $product->name }}"
                  alt="{{ $product->name }}" class="w-full h-48 object-cover">
           @endif
           <div class="p-4">

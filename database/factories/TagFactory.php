@@ -35,7 +35,7 @@
                 '🔍',
                 '⚙️'
               ]),
-              'image_url' => fake()->imageUrl(640, 480), // Especifica ancho y alto
+                //'image_url' => fake()->imageUrl(640, 480), // Especifica ancho y alto
             ];
         }
     }

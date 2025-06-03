@@ -24,7 +24,7 @@
               'title' => fake()->sentence(4),
               'slug' => fake()->slug(),
               'content' => fake()->paragraphs(3, true),
-              'image_url' => fake()->imageUrl(640, 480), // Especifica ancho y alto
+                //  'image_url' => fake()->imageUrl(640, 480), // Especifica ancho y alto
               'published_at' => fake()->dateTime(),
               'user_id' => User::factory(),
             ];

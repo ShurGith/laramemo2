@@ -29,7 +29,7 @@ models:
 
   ProductImage:
     product_id: id foreign:products
-    image_url: string
+    image_url: string nullable
     caption: string nullable
     order: integer default:0
     timestamps: true
