@@ -1,0 +1,95 @@
+models:
+  Post:
+    title: string
+    slug: string unique
+    content: longtext
+    image_url: string nullable
+    published_at: nullable timestamp
+    user_id: id foreign:users
+    timestamps: true
+    softDeletes: true
+    relationships:
+      belongsTo: User
+
+  Product:
+    name: string
+    slug: string unique
+    description: text nullable
+    price: decimal:8,2
+    stock: integer default:0
+    main_image: string nullable
+    user_id: id foreign:users
+    category_id: id foreign:categories
+    timestamps: true
+    softDeletes: true
+    relationships:
+      belongsTo: User, Category
+      belongsToMany: Tag
+      hasMany: ProductImage
+
+  ProductImage:
+    product_id: id foreign:products
+    image_url: string
+    caption: string nullable
+    order: integer default:0
+    timestamps: true
+    relationships:
+      belongsTo: Product
+
+  Category:
+    name: string
+    slug: string unique
+    description: text nullable
+    color: string nullable
+    icon: string nullable
+    image_url: string nullable
+    timestamps: true
+    relationships:
+      hasMany: Product
+
+  Tag:
+    name: string
+    slug: string unique
+    color: string nullable
+    icon: string nullable
+    image_url: string nullable
+    timestamps: true
+    relationships:
+      belongsToMany: Product
+
+controllers:
+  UserController:
+    resource: User
+  # Acciones: index, create, store, show, edit, update, destroy
+
+  PostController:
+    resource: Post
+    # Acciones: index, create, store, show, edit, update, destroy
+
+  ProductController:
+    resource: Product
+    # Acciones: index, create, store, show, edit, update, destroy
+    # Aquí podrías añadir métodos para gestionar ProductImage si prefieres
+    # centralizarlo, o usar ProductImageController.
+
+  ProductImageController:
+    resource: ProductImage
+    # Acciones: index (probablemente filtrado por producto), create, store, show, edit, update, destroy
+    # Este controlador gestionaría específicamente las imágenes secundarias de un producto.
+    # Se podría considerar anidar sus rutas bajo productos, ej: /products/{product}/images
+
+  CategoryController:
+    resource: Category
+    # Acciones: index, create, store, show, edit, update, destroy
+
+  TagController:
+    resource: Tag
+    # Acciones: index, create, store, show, edit, update, destroy
+
+seeders:
+  #  - User
+  - Category
+  - Tag
+  - Post
+  - Product
+  - ProductImage
