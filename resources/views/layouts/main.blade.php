@@ -24,7 +24,7 @@
   @endif
   <x-header/>
 </header>
-<main>
+<main class="bg-gray-900">
   @yield('content')
 </main>
 <x-footer/>

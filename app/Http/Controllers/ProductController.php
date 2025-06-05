@@ -16,7 +16,7 @@
         {
             $products = Product::query()
               ->latest()
-              ->paginate(5); // 12 productos por página
+              ->paginate(6); // 12 productos por página
             
             return view('products.index', ['products' => $products, 'title' => 'Lista de productos']);
         }

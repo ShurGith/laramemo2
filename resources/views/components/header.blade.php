@@ -28,7 +28,7 @@
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
       <x-Link ruta="dashboard.login" request="login" text="Log in" ico="true"/>
-      <a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+      {{--      <a href="#" class="text-sm/6 font-semibold text-white">Log in <span>&rarr;</span></a>--}}
     </div>
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->
