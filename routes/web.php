@@ -23,6 +23,10 @@
     Route::get('/about', function () {
         return view('pages.about');
     })->name('pages.about');
+    
+    Route::get('/login', function () {
+        return view('dashboard.login');
+    })->name('dashboard.login');
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
     

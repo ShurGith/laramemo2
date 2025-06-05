@@ -19,20 +19,15 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="{{ route('pages.market') }}"
-         class="{{ request()->is('market') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Marketplace</a>
-      <a href="{{ route('pages.features') }}"
-         class="{{ request()->is('features') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Features</a>
-      <a href="{{ route('pages.about') }}"
-         class="{{ request()->is('about') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">About</a>
-      <a href="{{ route('pages.team') }}"
-         class="{{ request()->is('team') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Team</a>
-      <a href="{{ route('products.index') }}"
-         class="{{ request()->is('products') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Productos</a>
-      <a href="{{ route('users.index') }}"
-         class="{{ request()->is('users') ? 'text-emerald-400' : 'text-white' }} font-semibold text-sm/6 ">Usuarios</a>
+      <x-Link ruta="pages.market" request="market" text="Marketplace"/>
+      <x-Link ruta="pages.features" request="features" text="Features"/>
+      <x-Link ruta="pages.about" request="about" text="About"/>
+      <x-Link ruta="pages.team" request="team" text="Team"/>
+      <x-Link ruta="products.index" request="products" text="Productos"/>
+      <x-Link ruta="users.index" request="users" text="Usuarios"/>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <x-Link ruta="dashboard.login" request="login" text="Log in" ico="true"/>
       <a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
     </div>
   </nav>
