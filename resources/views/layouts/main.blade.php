@@ -1,4 +1,4 @@
-@props(['banner' => true])
+@props(['banner' => true, 'forms' => false])
   <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>

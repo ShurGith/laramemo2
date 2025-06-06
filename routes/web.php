@@ -34,12 +34,17 @@
     
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     
+    
     Route::get('send-mail', function () {
 //        Mail:: raw('Hello world this a test email', function ($message) {
 //            $message->to('esnola@gmail.com')->subject('Este es el subject');
 //        });
         Mail::send(new OrderShipped);
         dd('Enviado el email');
+    });
+    
+    Route::get('upload', function () {
+        return view('pages.forms', ['forms' => true]);
     });
     
     Route::get('/test', function () {
